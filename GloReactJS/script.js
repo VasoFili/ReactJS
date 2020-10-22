@@ -17,8 +17,7 @@ const calcCash = (own) => own.reduce((acc,curr) => acc + curr)
 
 let lesson = calcCash(data.cash);
 
-
-function makeBusiness(director, teacher, allModule, gang, course) {
+const makeBusiness = (director, teacher, allModule, gang, course) => {
 	teacher = teacher || 'Максим';
 
 	const sumTech = data.react.concat(data.add, 'и другие');
@@ -26,5 +25,5 @@ function makeBusiness(director, teacher, allModule, gang, course) {
 	console.log(`Первое что изучим будет ${data.react[0]}. Он очень похож на HTML!`);
 	console.log(`Технологии которые мы изучим: ${sumTech}`);
 }
-
-makeBusiness.apply(null, ['Артем', null, lesson, command, nameCourse]);
+const arr = ['Артем', null, lesson, command, nameCourse];
+makeBusiness(...arr);
